@@ -16,7 +16,7 @@
 		    <label for="lname"><b>Last Name</b></label>
 		    <input id="lName" type="text" placeholder="Enter Last name" name="Lname" >
 
-		    <label for="country"><b>Country</b></label>
+		    <!-- <label for="country"><b>Country</b></label>
 			<select id="country" value="" name="Country">
 				<option>Australia</option>
 				<option>Canada</option>
@@ -35,15 +35,15 @@
 				<option>51 - 60</option>
 				<option>61 - 70</option>
 			</select>	
-		    
+		     -->
 		    <label for="email"><b>Email</b></label>
 		    <input id="eMail" type="text" placeholder="Enter Email" name="Email" >
 		  	
 		  	<label for="psw"><b>Password</b></label>
-		    <input id="Password" type="password" placeholder="Enter Password" name="Password" >
+		    <input id="Password" type="password" placeholder="Enter Password" name="password" >
 		    
 		    <label for="adr"><b>Address</b></label>
-            <input type="text" id="address" name="Paddress" placeholder="Permanent Address">
+            <input type="text" id="Address" name="Paddress" placeholder="Permanent Address">
 			
 			<button type="submit" value="submit" onclick="validate()">Submit</button>
 		</div>
@@ -55,12 +55,27 @@
 				var lastname = document.getElementById("lName");
 				var email = document.getElementById("eMail");
 				var password = document.getElementById("Password");
-				var Paddress = document.getElementById("address");
-
-				if (firstname.value == "" || lastname.value == ""){ 
-				        alert("Please enter your name.");  
-				    }
+				var paddress = document.getElementById("Address");
+				if (firstname.value == "" && lastname.value == "" && email.value == "" && password.value == "" && paddress.value == "") {
+					alert("Please fill your details");
+				}
+				else if (firstname.value == ""){ 
+				    alert("Please enter your first name.");  
+				}
+				else if(lastname.value == ""){
+				    alert("Please enter your last name.");
+				}
+				else if (email.value == "") {
+				    alert("Please enter your email.");
+				}
+				else if (password.value == "") {
+				    alert("Please enter your password.");
+				}
+				else if (paddress.value == "") {
+					alert("Please enter your Permanent Address.");
+				}
 				else{
+
 				}    
 			}	
 	</script>
