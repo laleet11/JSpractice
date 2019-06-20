@@ -2,8 +2,67 @@
 <html>
 <head>
 	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/script.js"></script>
 </head>
 <body>
+	<h1>REGISTRATION FORMS</h1>
+	<div class="main-form">
+	<form name="regform" method="post">
+	  	<div class="container">
+		    <label for="fname"><b>First Name</b></label>
+		    <input id="fName" type="text" placeholder="Enter first name" name="Fname" >
+		    
+		    <label for="lname"><b>Last Name</b></label>
+		    <input id="lName" type="text" placeholder="Enter Last name" name="Lname" >
 
+		    <label for="country"><b>Country</b></label>
+			<select id="country" value="" name="Country">
+				<option>Australia</option>
+				<option>Canada</option>
+				<option>USA</option>
+				<option>India</option>
+				<option>China</option>
+				<option>Japan</option>
+			</select>
+			
+			<label for="age"><b>Age</b></label>
+			<select id="agegroup" value="" name="Aged">
+				<option>15 - 20</option>
+				<option>21 - 30</option>
+				<option>31 - 40</option>
+				<option>41 - 50</option>
+				<option>51 - 60</option>
+				<option>61 - 70</option>
+			</select>	
+		    
+		    <label for="email"><b>Email</b></label>
+		    <input id="eMail" type="text" placeholder="Enter Email" name="Email" >
+		  	
+		  	<label for="psw"><b>Password</b></label>
+		    <input id="Password" type="password" placeholder="Enter Password" name="Password" >
+		    
+		    <label for="adr"><b>Address</b></label>
+            <input type="text" id="address" name="Paddress" placeholder="Permanent Address">
+			
+			<button type="submit" value="submit" onclick="validate()">Submit</button>
+		</div>
+	</form>
+	</div>
+	<script type="text/javascript">
+		function validate() {
+				var firstname = document.getElementById("fName");
+				var lastname = document.getElementById("lName");
+				var email = document.getElementById("eMail");
+				var password = document.getElementById("Password");
+				var Paddress = document.getElementById("address");
+
+				if (firstname.value == "" || lastname.value == ""){ 
+				        alert("Please enter your name.");  
+				    }
+				else{
+				}    
+			}	
+	</script>
 </body>
 </html>
