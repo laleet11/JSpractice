@@ -1,0 +1,35 @@
+h1{
+	text-align: center;
+}
+
+form{
+	max-width: 100% !important;
+	width: 300px !important;
+	margin: 0px auto !important;
+}
+label{
+	width: 100%;
+	margin: 10px 0px;	
+}
+input[type=text], input[type=password], textarea, select{
+	width: 100%;
+	margin: 10px 0px 20px 0px;
+	padding: 10px;
+}
+button[type=submit]{
+	width: 80%;
+	background-color: #f0f0f0;
+	color: #000;
+	font-weight: 700;
+	text-align: center;
+	padding: 12px 20px;
+	margin: 10px 45px;
+	border: none;
+	border-radius: 10px;
+}
+button[type=submit]:hover{
+	background-color: #45a049;
+	color: #fff;
+	transition: 0.5s ease;
+	
+}
