@@ -17,25 +17,25 @@
 		    <input id="lName" type="text" placeholder="Enter Last name" name="Lname" >
 
 		    <label for="country"><b>Country</b></label>
-			<select id="country" value="" name="Country">
-				<option>Select Countries</option>
-				<option>Australia</option>
-				<option>Canada</option>
-				<option>USA</option>
-				<option>India</option>
-				<option>China</option>
-				<option>Japan</option>
+			<select id="country" name="Country">
+				<option value="selected">Select Countries</option>
+				<option value="2">Australia</option>
+				<option value="3">Canada</option>
+				<option value="4">USA</option>
+				<option value="5">India</option>
+				<option value="6">China</option>
+				<option value="7">Japan</option>
 			</select>
 			
 			<label for="age"><b>Age</b></label>
-			<select id="agegroup" value="" name="Aged">
-				<option>Select Age Group</option>
-				<option>15 - 20</option>
-				<option>21 - 30</option>
-				<option>31 - 40</option>
-				<option>41 - 50</option>
-				<option>51 - 60</option>
-				<option>61 - 70</option>
+			<select id="agegroup" name="Aged">
+				<option value="selected">Select Age Group</option>
+				<option value="2">15 - 20</option>
+				<option value="3">21 - 30</option>
+				<option value="4">31 - 40</option>
+				<option value="5">41 - 50</option>
+				<option value="6">51 - 60</option>
+				<option value="7">61 - 70</option>
 			</select>	
 		    
 		    <label for="email"><b>Email</b></label>
@@ -55,6 +55,8 @@
 		function validate() {
 				var firstname = document.getElementById("fName");
 				var lastname = document.getElementById("lName");
+				var country = document.getElementById("country");
+				var age = document.getElementById("agegroup");
 				var email = document.getElementById("eMail");
 				var password = document.getElementById("Password");
 				var paddress = document.getElementById("Address");
@@ -69,6 +71,14 @@
 				else if(lastname.value == ""){
 				    alert("Please enter your last name.");
 				    return false;
+				}
+				else if(country.selectedIndex == ""){
+					alert ( "Please select your country");
+					return false;
+				}
+				else if(age.selectedIndex == ""){
+					alert ( "Please select your age group");
+					return false;
 				}
 				else if (email.value == "") {
 				    alert("Please enter your email.");
@@ -88,5 +98,18 @@
 				}    
 			}	
 	</script>
+	<!-- <script type="text/javascript">
+		function validate()
+			{
+				var age = document.getElementById("agegroup");
+
+				if(age.selectedIndex=="")
+				{
+					alert ( "Please select your age group");
+					return false;
+				}
+				return true;
+			}
+	</script> -->
 </body>
 </html>
