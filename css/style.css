@@ -13,7 +13,7 @@ label{
 }
 input[type=text], input[type=password], textarea, select{
 	width: 100%;
-	margin: 10px 0px 20px 0px;
+	margin: 10px 0px 0px 0px;
 	padding: 10px;
 }
 button[type=submit]{
@@ -30,6 +30,32 @@ button[type=submit]{
 button[type=submit]:hover{
 	background-color: #45a049;
 	color: #fff;
-	transition: 0.5s ease;
-	
+	transition: 0.5s ease;	
+}
+#message {
+  display: none;
+  color: #000;
+  position: relative;
+  margin: 10px 0px;
+}
+ul{
+	padding: 0px !important;
+	margin: 0px !important;
+}
+ul li{
+	display: inline;
+	float: left;
+	list-style-type: none;
+	padding-right: 10px; 
+	font-size: 12px;
+}
+
+.valid {
+  color: green;
+}
+.invalid {
+  color: red;
+}
+.invalid .fa-check{
+	display: none;
 }
