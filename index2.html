@@ -3,58 +3,186 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 	<script type="text/javascript" src="js/script.js"></script>
 </head>
 <body>
 	<h1>REGISTRATION FORMS</h1>
 	<div class="main-form">
-	<form name="regform" method="post" onsubmit="return validate()">
+	<form name="regform" method="post" action="welcome.html" onsubmit="return validate()">
 	  	<div class="container">
 		    <label for="fname"><b>First Name</b></label>
 		    <input id="fName" type="text" placeholder="Enter first name" name="Fname" >
-		    
+		    <div id="invalid_fname" style="color: red; visibility: hidden; font-size: 10px;">Please Enter Your Firstname</div>
+
 		    <label for="lname"><b>Last Name</b></label>
 		    <input id="lName" type="text" placeholder="Enter Last name" name="Lname" >
-
+		    <div id="invalid_lname" style="color: red; visibility: hidden; font-size: 10px;">Please Enter Your Lastname</div>
 		    <label for="country"><b>Country</b></label>
 			<select id="country" value="" name="Country">
-				<option>Select Countries</option>
-				<option>Australia</option>
-				<option>Canada</option>
-				<option>USA</option>
-				<option>India</option>
-				<option>China</option>
-				<option>Japan</option>
+				<option value="1">Select Countries</option>
+				<option value="2">Australia</option>
+				<option value="3">Canada</option>
+				<option value="4">USA</option>
+				<option value="5">India</option>
+				<option value="6">China</option>
+				<option value="7">Japan</option>
 			</select>
+			<div id="invalid_country" style="color: red; visibility: hidden; font-size: 10px;">Please select your country</div>
 			
 			<label for="age"><b>Age</b></label>
 			<select id="agegroup" value="" name="Aged">
-				<option>Select Age Group</option>
-				<option>15 - 20</option>
-				<option>21 - 30</option>
-				<option>31 - 40</option>
-				<option>41 - 50</option>
-				<option>51 - 60</option>
-				<option>61 - 70</option>
+				<option value="1">Select Age Group</option>
+				<option value="2">15 - 20</option>
+				<option value="3">21 - 30</option>
+				<option value="4">31 - 40</option>
+				<option value="5">41 - 50</option>
+				<option value="6">51 - 60</option>
+				<option value="7">61 - 70</option>
 			</select>	
-		    
+		    <div id="invalid_age" style="color: red; visibility: hidden; font-size: 10px;">Please Select your AgeGroup</div>
+
 		    <label for="email"><b>Email</b></label>
 		    <input id="eMail" type="text" placeholder="Enter Email" name="Email" >
-		  	
+		  	<div id="invalid_email" style="color: red; visibility: hidden; font-size: 10px;">Please Enter Your Email</div>
+
 		  	<label for="psw"><b>Password</b></label>
-		    <input id="Password" type="password" placeholder="Enter Password" name="password" >
-		    
+		    <input id="Password" type="password" placeholder="Enter Password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+		    <div id="invalid_pass" style="color: red; visibility: hidden; font-size: 10px;">Please Enter Your Password</div>
+		    <div id="message">
+				<ul>
+					<li id="letter" class="invalid">
+						<i class="fas fa-check"></i>
+						A <b>lowercase</b> letter
+					</li>
+					<li id="capital" class="invalid">
+						<i class="fas fa-check"></i>
+						A <b>capital (uppercase)</b> letter
+					</li>
+					<li id="number" class="invalid">
+						<i class="fas fa-check"></i>
+						A <b>number</b>
+					</li>
+					<li id="length" class="invalid">
+						<i class="fas fa-check"></i>
+						Minimum <b>8 characters</b>
+					</li>
+				</ul>
+			</div>
 		    <label for="adr"><b>Address</b></label>
             <input type="text" id="Address" name="Paddress" placeholder="Permanent Address">
-			
+			<div id="invalid_addr" style="color: red; visibility: hidden; font-size: 10px;">Please Enter Your Address</div>
+
 			<button type="submit" value="submit" >Submit</button>
 		</div>
 	</form>
 	</div>
+
 	<script type="text/javascript">
 		function validate() {
-				
+				var firstname = document.getElementById("fName");
+				var lastname = document.getElementById("lName");
+				var country = document.getElementById("country");
+				var age = document.getElementById("agegroup");
+				var email = document.getElementById("eMail");
+				var password = document.getElementById("Password");
+				var paddress = document.getElementById("Address");
+				if (firstname.value == "" && lastname.value == "" && email.value == "" && password.value == "" && paddress.value == "") {
+					alert("Please fill your details");
+					return false;
+				}
+				if (firstname.value == "") {
+					firstname.style.border = "solid 1px red";
+					document.getElementById("invalid_fanme").style.visibility="visible";
+					return false;
+				}
+				else if (lastname.value == "") {
+					lastname.style.border = "solid 1px red";
+					document.getElementById("invalid_lname").style.visibility="visible";
+					return false;
+				}
+				else if(country.selectedIndex == ""){
+					email.style.border = "solid 1px red";
+					document.getElementById("invalid_country").style.visibility="visible";
+					return false;
+				}
+				else if(age.selectedIndex == ""){
+					email.style.border = "solid 1px red";
+					document.getElementById("invalid_age").style.visibility="visible";
+					return false;
+				}
+				else if (email.value == "") {
+					email.style.border = "solid 1px red";
+					document.getElementById("invalid_email").style.visibility="visible";
+					return false;
+				}
+				else if (password.value == "") {
+					password.style.border = "solid 1px red";
+					document.getElementById("invalid_pass").style.visibility="visible";
+					return false;
+				}
+				else if (paddress.value == "") {
+					paddress.style.border = "solid 1px red";
+					document.getElementById("invalid_addr").style.visibility="visible";
+					return false;
+				}
+				else{
+					return true;
+				}
+
 			}	
 	</script>
+
+<script>
+	var myInput = document.getElementById("Password");
+	var letter = document.getElementById("letter");
+	var capital = document.getElementById("capital");
+	var number = document.getElementById("number");
+	var length = document.getElementById("length");
+	myInput.onfocus = function() {
+	  document.getElementById("message").style.display = "inline-block";
+	}
+
+	myInput.onblur = function() {
+	  document.getElementById("message").style.display = "none";
+	}
+
+	myInput.onkeyup = function() {
+	  var lowerCaseLetters = /[a-z]/g;
+	  if(myInput.value.match(lowerCaseLetters)) {  
+	    letter.classList.remove("invalid");
+	    letter.classList.add("valid");
+	  } else {
+	    letter.classList.remove("valid");
+	    letter.classList.add("invalid");
+	  }
+
+	  var upperCaseLetters = /[A-Z]/g;
+	  if(myInput.value.match(upperCaseLetters)) {  
+	    capital.classList.remove("invalid");
+	    capital.classList.add("valid");
+	  } else {
+	    capital.classList.remove("valid");
+	    capital.classList.add("invalid");
+	  }
+
+	  var numbers = /[0-9]/g;
+	  if(myInput.value.match(numbers)) {  
+	    number.classList.remove("invalid");
+	    number.classList.add("valid");
+	  } else {
+	    number.classList.remove("valid");
+	    number.classList.add("invalid");
+	  }
+	  
+	  if(myInput.value.length >= 8) {
+	    length.classList.remove("invalid");
+	    length.classList.add("valid");
+	  } else {
+	    length.classList.remove("valid");
+	    length.classList.add("invalid");
+	  }
+	}
+</script>
 </body>
 </html>
