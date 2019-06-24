@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+div {
+  overflow:hidden;
+  white-space:nowrap;
+}
+.circle{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: red;
+  position: relative;
+  left: 900px;
+  top: 200px;
+  animation-name: example;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes example {
+  from {left:900px; top:200px;}
+  to  {left:200px; top:200px;}
+}
+
+.text{
+  width: 100%;
+  font-size: 48px;
+  color: red;
+  position: relative;
+  left: 400px;
+  top: 0px;
+  animation-name: showup;
+  animation-delay: 5s; 
+  animation-duration: 5s;
+}
+.text span{
+  animation-name: reveal;
+  animation-delay: 5s; 
+  animation-duration: 5s; 
+}
+@keyframes showup{
+    0% {width:0; opacity:0;}
+    25% {width: 200px; opacity:0.4;}
+    50% {width: 400px; opacity:0.6;}
+    75% {width: 600px; opacity:0.8;}
+    100% {width: 600px; opacity:1;}
+}
+@keyframes reveal{
+
+}
+</style>
+</head>
+<body>
+
+<div class="circle"></div>
+<div>
+<span class="text">hello my name is lalit</span>
+</div>
+</body>
+</html>
